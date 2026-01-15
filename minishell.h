@@ -33,8 +33,11 @@ typedef enum e_type
 	INPUT,
 	TRUNC,
 	HEREDOC,
-	APPEND,			
+	APPEND,
+	S_QUOTE,
+	D_QUOTE
 }	t_type;
+
 
 typedef struct s_token
 {
@@ -48,5 +51,6 @@ void	*gc_malloc(size_t size);
 void	gc_add_node(void *ptr);
 void	gc_free_all(void);
 t_gc	**get_gc_list(void);
+t_token	*lexer(char *input);
 
 #endif
